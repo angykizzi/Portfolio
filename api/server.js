@@ -31,7 +31,7 @@ contactEmail.verify((error) => {
 
 
 router.post("/contact", (req, res) => {
-  res.setHeader('Access-Control-Allow-Origin', 'https://portfolio-rho-seven-83.vercel.app/');
+  res.setHeader('Access-Control-Allow-Origin', 'https://portfolio-rho-seven-83.vercel.app');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
   const name = req.body.firstName + req.body.lastName;
