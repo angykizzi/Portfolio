@@ -40,7 +40,7 @@ export const Contact = () => {
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
     setButtonText("Sending...");
-    let response = await fetch("http://localhost:3001/contact", {
+    let response = await fetch("https://portfolio-production-dbc6.up.railway.app/contact", {
       method: "POST",
       headers: {
         "Content-Type": "application/json;charset=utf-8",
