@@ -1,0 +1,24 @@
+
+/************ Footer Css ************/
+.footer {
+    padding: 0 0 10px 0;
+    background-image: url('../../assets/img/footer-bg.png');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .footer img {
+    width: 20%;
+  }
+  .footer p {
+    font-weight: 400;
+    font-size: 14px;
+    color: #B8B8B8;
+    letter-spacing: 0.5px;
+    margin-top: 10px;
+  }
+  
+  .footer .social-icon {
+    margin-top: 10px;
+  }
