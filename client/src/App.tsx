@@ -1,5 +1,3 @@
-import React from 'react';
-import { Route, Routes, useLocation } from "react-router-dom";
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import {NavBar} from './components/NavBar/NavBar'
