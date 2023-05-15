@@ -141,3 +141,33 @@ router.all("/", wrappedHandler);
 app.listen(5200, () => console.log("Server Running"));
 
 module.exports = app;
+
+// Agrega el código de la solicitud fetch aquí
+const requestOptions = {
+  method: 'POST',
+  mode: 'no-cors', // Establece el modo en 'no-cors'
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    firstName: 'John',
+    lastName: 'Doe',
+    email: 'john@example.com',
+    message: 'Hello',
+    phone: '1234567890'
+  })
+};
+
+fetch('https://portfolio-production-dbc6.up.railway.app/contact', requestOptions)
+  .then(response => {
+    if (response.ok) {
+      console.log('Mensaje enviado con éxito');
+    } else {
+      console.log('Error al enviar el mensaje');
+    }
+  })
+  .catch(error => {
+    console.log('Error de red:', error);
+  });
+
+module.exports = app;
