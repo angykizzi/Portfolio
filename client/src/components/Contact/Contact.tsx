@@ -115,6 +115,13 @@ export const Contact = () => {
 
                             }
                         </Row>
+                          {status.message && (
+                          <Col>
+                          <p className={status.success === false ? 'danger' : 'success'}>
+                          {status.message}
+                          </p>
+                          </Col>
+)}
                     </form>
                     </div>}
                     </TrackVisibility>
