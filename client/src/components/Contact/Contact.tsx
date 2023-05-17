@@ -33,6 +33,7 @@ export const Contact = () => {
     const [formDetails, setformDetails] = useState(formInitialDetails);
     const [buttonText, setButtonText] = useState('Send');
     const [status, setStatus] = useState<StatusProps>({});
+
     const onFormUpdate = ({category, value}:ContactProps) => {
         setformDetails({
           ...formDetails,
@@ -44,21 +45,25 @@ export const Contact = () => {
       e.preventDefault();
     
       if (form.current) {
-        emailjs.sendForm(
-          'service_zhslesz',
-          'template_swq67bh',
+      emailjs
+        .sendForm(
+          'YOUR_SERVICE_ID',
+          'YOUR_TEMPLATE_ID',
           form.current,
-          '4Q2vDHOSU3lgrPwTx'
-        ).then(
+          'YOUR_PUBLIC_KEY'
+        )
+        .then(
           (result) => {
             console.log(result.text);
+            setStatus({ message: 'Email sent successfully', success: true });
           },
           (error) => {
             console.log(error.text);
+            setStatus({ message: 'Failed to send email', success: false });
           }
         );
-      }
-    };
+    }
+  };
 
     return (
         <section className='contact' id='connect'>
