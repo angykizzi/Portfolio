@@ -121,7 +121,7 @@ export const Contact = () => {
                           {status.message}
                           </p>
                           </Col>
-)}
+                          )}
                     </form>
                     </div>}
                     </TrackVisibility>

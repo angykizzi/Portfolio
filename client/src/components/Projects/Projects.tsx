@@ -47,11 +47,10 @@ export const Project = () => {
                       <Row>
                         <ProjectCard 
                         title="Appdoptame"
-                        description= {<p>AppDoptame is an innovative application designed to streamline the pet adoption process and support animal protection associations. Our platform is specifically designed to reduce the time that rescued pets spend in shelters, while also minimizing the maintenance costs that associations incur. By promoting greater visibility and dissemination of animals available for adoption, we aim to improve the overall quality of life for these vulnerable creatures.
-
-                        With AppDoptame, users can easily create an account and explore our platform's features, including filtering by location and animal type. Meanwhile, associations can create their own profile and access a control panel to manage their pets and communicate with potential adopters. As administrators of the platform, we oversee all activities through a central panel that provides information on users, associations, and pets.
-                          
-                        One unique feature of AppDoptame is the ability for users to sponsor animal protection associations and make donations directly through our platform. Our application is poised to revolutionize the adoption process and serve as a valuable solution for animal protection associations across the country. The application is available at <a href="https://github.com/angykizzi/App-Doptame/tree/develop">link</a></p>}
+                        description= {
+                          <div className="project-card-text-container">
+                        <p>AppDoptame is an innovative application that simplifies pet adoption and supports animal protection associations. It reduces shelter time for rescued pets and lowers maintenance costs. The platform enhances visibility and dissemination of adoptable animals, improving their quality of life. Users can create accounts, filter by location and animal type. Associations can manage pets, communicate with potential adopters, and receive sponsorships and donations. AppDoptame revolutionizes the adoption process and helps animal protection associations nationwide. Find the application at the provided <a href="https://github.com/angykizzi/App-Doptame/tree/develop">link</a>
+                        </p></div>}
                         imgUrl= {projImg1}
                         link= "https://github.com/angykizzi/App-Doptame/tree/develop"
                          />
@@ -61,11 +60,8 @@ export const Project = () => {
                       <Row>
                       <ProjectCard 
                         title="PI food"
-                        description= {<p>The Food Individual Project involved the development of a comprehensive web application that leverages APIs and databases to provide users with an extensive collection of recipes and meals. Our team utilized a range of cutting-edge technologies, including JavaScript, Node.js, Express, HTML, CSS, React, React-Redux, and SQL, to deliver an immersive and engaging user experience.
-
-                        One of the primary goals of the project was to create a dynamic platform that enables users to easily add and modify their meals while also leveraging filters and search functionalities to enhance the overall user experience. Our platform also features a dedicated page for each recipe, providing users with detailed information and allowing them to explore the intricacies of each dish.
-                          
-                        The use of APIs and databases provides a robust and scalable infrastructure that enables our platform to process requests efficiently and securely. Our team worked tirelessly to create a comprehensive application that meets the needs of our users and delivers an exceptional experience. The application is available at <a href="https://github.com/angykizzi/PI-Food-main">link</a></p>}
+                        description= {
+                        <div className="project-card-text-container"><p>The Food Individual Project is a web application that offers a vast collection of recipes and meals. It utilizes modern technologies like JavaScript, Node.js, Express, HTML, CSS, React, React-Redux, and SQL to create an immersive user experience. The platform allows users to add and modify meals easily, with filters and search options for a seamless experience. Each recipe has a dedicated page with detailed information. The application incorporates APIs and databases for efficient and secure request processing. The team has developed a comprehensive and exceptional application. Find it at <a href="https://github.com/angykizzi/PI-Food-main">link</a></p></div>}
                         imgUrl= {projImg2}
                         link= "https://github.com/angykizzi/App-Doptame/tree/develop"
                          />

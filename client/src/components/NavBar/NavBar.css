@@ -8,8 +8,9 @@ nav.navbar {
     transition:  0.32s ease-in-out;
   }
   .navbar img{
-    width: 50px;
-    height: 30px;
+    width: 6vw;
+    height: 3vw;
+    margin-left: -9vw;
   }
   nav.navbar.scrolled {
     padding: 0px 0;
@@ -34,13 +35,12 @@ nav.navbar {
       display: flex;
       align-items: center;
   }
-  .social-icon {
-      display: inline-block;
-      margin-left: 14px;
+  span.navbar-text .social-icon {
+      display: flex;
   }
   .social-icon a {
-      width: 42px;
-      height: 42px;
+      width: 3.5vw;
+      height: 3.5vw;
       background: #FFFFFF;
       display: inline-flex;
       border-radius: 50%;
@@ -52,8 +52,8 @@ nav.navbar {
   }
   .social-icon a::before {
       content: "";
-      width: 42px;
-      height: 42px;
+      width: 3.5vw;
+      height: 3.5vw;
       position: absolute;
       background-color: rgba(54, 54, 54, 0.4);
       border-radius: 50%;
@@ -110,6 +110,7 @@ nav.navbar {
       outline: none;
       box-shadow: none;
   }
+
   nav.navbar .navbar-toggler-icon {
     width: 24px;
     height: 17px;
@@ -141,6 +142,7 @@ nav.navbar {
       transform: rotate(45deg);
       background-color: #fff;
       height: 2px;
+      
   }
   nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
       transform: translateY(8px) rotate(-45deg);

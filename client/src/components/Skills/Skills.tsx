@@ -44,7 +44,7 @@ export const Skills = () => {
                             Skills
                         </h2>
                         <p>
-                        As a Junior Full Stack Developer, I bring to the table a diverse range of technical proficiencies that enable me to seamlessly navigate the entire project lifecycle. In addition to my technical skills, I possess a suite of essential soft skills that make me a valuable asset to any team. These skills include adaptability, attention to detail, empathy, flexibility, leadership, organization, patience, social skills, and problem-solving.
+                        I'm a Junior Full Stack Developer, I bring to the table a diverse range of technical proficiencies that enable me to seamlessly navigate the entire project lifecycle. In addition to my technical skills, I possess a suite of essential soft skills that make me a valuable asset to any team. These skills include adaptability, attention to detail, empathy, flexibility, leadership, organization, patience, social skills, and problem-solving.
                         </p>
                         <Carousel responsive={responsive} infinite={true} className="skill-slider">
                             <div className="item">
