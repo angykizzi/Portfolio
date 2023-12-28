@@ -34,36 +34,26 @@ export const Contact = () => {
     const [buttonText, setButtonText] = useState('Send');
     const [status, setStatus] = useState<StatusProps>({});
 
-    const onFormUpdate = ({category, value}:ContactProps) => {
-        setformDetails({
-          ...formDetails,
-          [category]: value
-        })
-    }
-
-    const sendEmail = (e: { preventDefault: () => void }) => {
-      e.preventDefault();
-    
-      if (form.current) {
-      emailjs
-        .sendForm(
-          'service_zhslesz',
-          'template_swq67bh',
-          form.current,
-          '4Q2vDHOSU3lgrPwTx'
-        )
-        .then(
-          (result) => {
-            console.log(result.text);
-            setStatus({ message: 'Email sent successfully', success: true });
-          },
-          (error) => {
-            console.log(error.text);
-            setStatus({ message: 'Failed to send email', success: false });
+    const onFormUpdate = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, category: string) => {
+      const value = e.target.value;
+      // Permitir solo números para el teléfono
+      if (category === 'phone') {
+          if (/^\d*$/.test(value)) { // Solo permite valores numéricos
+              setformDetails({
+                  ...formDetails,
+                  [category]: value
+              });
           }
-        );
-    }
-  };
+      } else {
+          // Para todos los otros campos
+          setformDetails({
+              ...formDetails,
+              [category]: value
+          });
+      }
+  }
+
+
 
     return (
         <section className='contact' id='connect'>
@@ -82,33 +72,33 @@ export const Contact = () => {
                 <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                     <h2>Get In Touch</h2>
 
-                    <form ref={form} onSubmit={sendEmail}>
+                    <form ref={form} action="https://formspree.io/f/xnqeaewa" method="POST">
                         <Row>
                             <Col sm={6} className='px-1'>
                                 <input type='text' name="user_name" value={formDetails.firstName
-                                } placeholder='First Name' onChange={(e)=>onFormUpdate({ category: 'firstName', value: e.target.value })}
+                                } placeholder='First Name' onChange={(e) => onFormUpdate(e, 'firstName')}
                                 ></input>
                             </Col>
                             <Col sm={6} className='px-1'>
                             <input type='text' name="user_lastname" value={formDetails.lastName
-                                } placeholder='Last Name' onChange={(e)=>onFormUpdate({ category: 'lastName', value: e.target.value })}
+                                } placeholder='Last Name' onChange={(e) => onFormUpdate(e, 'lastName')}
                                 ></input>
                             </Col>
                             <Col sm={6} className='px-1'>
                             <input type='email' name="user_email"  value={formDetails.email
-                                } placeholder='Email address' onChange={(e)=>onFormUpdate({ category: 'email', value: e.target.value })}
+                                } placeholder='Email address' onChange={(e) => onFormUpdate(e, 'email')}
                                 ></input>
                             </Col>
                             <Col sm={6} className='px-1'>
-                            <input type='tel' name='user_phone' value={formDetails.phone
-                                } placeholder='Phone No.' onChange={(e)=>onFormUpdate({ category: 'phone', value: e.target.value })}
+                            <input type='tel' name='user_phone' pattern="[0-9]*"  value={formDetails.phone
+                                } placeholder='Phone No.' onChange={(e) => onFormUpdate(e, 'phone')}
                                 ></input>
                             </Col>
                             <Col>
-                            <textarea rows={+6} value={formDetails.message} placeholder='Message' name="message" onChange={(e)=>onFormUpdate({ category: 'message', value: e.target.value })}></textarea>
+                            <textarea rows={+6} value={formDetails.message} placeholder='Message' name="message" onChange={(e)=>onFormUpdate(e, 'message')}></textarea>
                             <button type="submit" disabled={!isFormValid()}><span>{buttonText}</span></button>
                             </Col>
-                            {status.message && 
+                            {status.message &&
                             <Col>
                             <p className={status.success === false ? "danger": "success"}>{status.message} </p>
                             </Col>
